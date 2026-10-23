@@ -1,0 +1,213 @@
+:root {
+  --rosa: #E07F8F;
+  --rosa-escuro: #B05A6A;
+  --rosa-claro: #FBE7EA;
+  --texto: #222;
+  --serifada: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --cursiva: "Great Vibes", "Dancing Script", cursive;
+  --sans: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--texto);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.convite {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+  text-align: center;
+  overflow: hidden;
+  animation: entrada 1s ease-out both;
+}
+
+@keyframes entrada {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .convite { animation: none; }
+}
+
+/* 1) Flores: sangram até a borda da coluna */
+.flores {
+  display: block;
+  width: calc(100% + 40px);
+  height: auto;
+  margin: 0 -20px;
+}
+
+/* 2) XV NINA */
+.titulo {
+  margin-top: 8px;
+  color: var(--rosa);
+  font-family: var(--serifada);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.xv {
+  display: block;
+  font-size: 40px;
+  letter-spacing: 0.12em;
+}
+
+.nome {
+  margin: 4px 0 0;
+  font-size: 88px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* 3) Frase com o laço no canto */
+.frase {
+  position: relative;
+  margin: 28px 0 32px;
+  padding: 34px 18px 10px 54px;
+}
+
+.laco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: auto;
+  pointer-events: none;
+}
+
+.frase p {
+  position: relative;
+  margin: 0;
+  font-family: var(--cursiva);
+  font-size: 34px;
+  line-height: 1.25;
+  color: var(--texto);
+}
+
+/* 4) Vídeo */
+.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  background: #000;
+  object-fit: cover;
+}
+
+/* 5–7) Blocos */
+.divisor {
+  width: 64%;
+  margin: 36px auto;
+  border: 0;
+  border-top: 1px solid var(--rosa);
+}
+
+.bloco h2 {
+  margin: 0 0 10px;
+  color: var(--rosa);
+  font-family: var(--serifada);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.bloco p { margin: 0 0 6px; }
+
+.destaque { font-weight: 700; }
+
+.contagem {
+  margin-top: 14px !important;
+  color: var(--rosa-escuro);
+  font-family: var(--cursiva);
+  font-size: 32px;
+  line-height: 1.2;
+  min-height: 1.2em;
+}
+
+.botao {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font: 700 16px var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.botao-cheio {
+  background: var(--rosa);
+  border: 2px solid var(--rosa);
+  color: #fff;
+}
+
+.botao-cheio:hover { opacity: 0.88; }
+
+.botao-contorno {
+  background: #fff;
+  border: 2px solid var(--rosa);
+  color: var(--rosa);
+}
+
+.botao-contorno:hover,
+.botao-contorno.copiado {
+  background: var(--rosa);
+  color: #fff;
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--rosa-escuro);
+  outline-offset: 3px;
+}
+
+.cartoes {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.cartao {
+  flex: 1;
+  padding: 16px 10px;
+  border-radius: 14px;
+  background: var(--rosa-claro);
+  color: var(--rosa-escuro);
+  line-height: 1.4;
+}
+
+.cartao strong { font-size: 20px; }
+
+.ou-pix {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.qr {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 12px auto;
+}
+
+.chave {
+  font-size: 15px;
+  word-break: break-word;
+}
+
+/* 8) Rodapé */
+.rodape {
+  margin-top: 44px;
+  color: var(--rosa-escuro);
+  font-family: var(--cursiva);
+  font-size: 38px;
+}
