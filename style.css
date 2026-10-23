@@ -1,7 +1,11 @@
 :root {
   --rosa: #E07F8F;
   --rosa-escuro: #B05A6A;
-  --rosa-claro: #FBE7EA;
+  --rosa-claro: #FFF0F3;
+  --rosa-vivo: #D65F75;
+  --rosa-botao: #C9566B;
+  --borda: #F6CDD5;
+  --sombra: 0 8px 24px rgba(214, 95, 117, 0.12);
   --texto: #222;
   --serifada: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --cursiva: "Great Vibes", "Dancing Script", cursive;
@@ -10,15 +14,34 @@
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  background: #FDE4EA;
+}
 
 body {
   margin: 0;
-  background: #fff;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF5F7 0%, #FDE4EA 100%);
   color: var(--texto);
   font-family: var(--sans);
   font-size: 17px;
   line-height: 1.5;
+}
+
+/* Pétalas bem suaves no fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(14px 9px at 8% 30%, rgba(224, 127, 143, 0.22), transparent 70%),
+    radial-gradient(10px 7px at 92% 18%, rgba(224, 127, 143, 0.2), transparent 70%),
+    radial-gradient(12px 8px at 85% 62%, rgba(224, 127, 143, 0.18), transparent 70%),
+    radial-gradient(9px 6px at 12% 78%, rgba(224, 127, 143, 0.2), transparent 70%),
+    radial-gradient(11px 7px at 50% 92%, rgba(224, 127, 143, 0.16), transparent 70%);
 }
 
 .convite {
@@ -50,7 +73,7 @@ body {
 /* 2) XV NINA */
 .titulo {
   margin-top: 8px;
-  color: var(--rosa);
+  color: var(--rosa-vivo);
   font-family: var(--serifada);
   font-weight: 500;
   line-height: 1;
@@ -95,6 +118,13 @@ body {
 }
 
 /* 4) Vídeo */
+.moldura-video {
+  padding: 6px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--borda), var(--sombra);
+}
+
 .video {
   display: block;
   width: 100%;
@@ -104,21 +134,58 @@ body {
   object-fit: cover;
 }
 
-/* 5–7) Blocos */
-.divisor {
-  width: 64%;
-  margin: 36px auto;
-  border: 0;
-  border-top: 1px solid var(--rosa);
+/* 5–7) Blocos em cartões */
+.enfeite {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 70%;
+  margin: 34px auto 26px;
+  color: var(--rosa-vivo);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.enfeite::before,
+.enfeite::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rosa-vivo));
+}
+
+.enfeite::after { transform: scaleX(-1); }
+
+.info {
+  display: grid;
+  gap: 20px;
+}
+
+.bloco {
+  padding: 26px 20px 24px;
+  border: 1px solid var(--borda);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--sombra);
 }
 
 .bloco h2 {
-  margin: 0 0 10px;
-  color: var(--rosa);
+  margin: 0 0 14px;
+  color: var(--rosa-vivo);
   font-family: var(--serifada);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+.bloco h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  background: var(--rosa);
 }
 
 .bloco p { margin: 0 0 6px; }
@@ -146,8 +213,8 @@ body {
 }
 
 .botao-cheio {
-  background: var(--rosa);
-  border: 2px solid var(--rosa);
+  background: var(--rosa-botao);
+  border: 2px solid var(--rosa-botao);
   color: #fff;
 }
 
@@ -155,13 +222,13 @@ body {
 
 .botao-contorno {
   background: #fff;
-  border: 2px solid var(--rosa);
-  color: var(--rosa);
+  border: 2px solid var(--rosa-botao);
+  color: var(--rosa-botao);
 }
 
 .botao-contorno:hover,
 .botao-contorno.copiado {
-  background: var(--rosa);
+  background: var(--rosa-botao);
   color: #fff;
 }
 
@@ -179,6 +246,7 @@ body {
 .cartao {
   flex: 1;
   padding: 16px 10px;
+  border: 1px solid var(--borda);
   border-radius: 14px;
   background: var(--rosa-claro);
   color: var(--rosa-escuro);
@@ -192,11 +260,16 @@ body {
   font-size: 18px;
 }
 
+/* QR sempre com fundo branco atrás, pra câmera ler bem */
 .qr {
   display: block;
-  width: 180px;
+  width: 196px;
   height: auto;
   margin: 12px auto;
+  padding: 8px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: #fff;
 }
 
 .chave {
@@ -206,8 +279,75 @@ body {
 
 /* 8) Rodapé */
 .rodape {
-  margin-top: 44px;
+  margin-top: 40px;
   color: var(--rosa-escuro);
   font-family: var(--cursiva);
   font-size: 38px;
+}
+
+/* Tablet: ainda vertical, mas mais largo; Quando e Onde lado a lado */
+@media (min-width: 640px) {
+  .convite { max-width: 680px; }
+
+  .hero-texto,
+  .moldura-video {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .info { grid-template-columns: 1fr 1fr; }
+  .info .bloco:last-child { grid-column: 1 / -1; }
+  .info .bloco:last-child .cartoes { max-width: 360px; margin-left: auto; margin-right: auto; }
+}
+
+/* Computador: horizontal */
+@media (min-width: 900px) {
+  .convite {
+    max-width: 1200px;
+    padding: 0 40px 56px;
+  }
+
+  .flores {
+    width: calc(100% + 80px);
+    margin: 0 -40px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    align-items: center;
+    gap: 48px;
+    margin-top: 12px;
+  }
+
+  .hero-texto,
+  .moldura-video { max-width: none; margin: 0; }
+
+  .nome { font-size: 104px; }
+
+  .frase { margin-bottom: 0; }
+
+  .enfeite { width: 50%; margin: 48px auto 36px; }
+
+  /* Quando e Onde empilhados à esquerda, Presente à direita */
+  .info {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .info .bloco:last-child { grid-column: 2; grid-row: 1 / span 2; }
+
+  .bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 24px 28px;
+  }
+
+  .info .bloco:not(:last-child) { justify-content: center; }
+
+  .bloco .cartoes { width: 100%; max-width: 380px; }
+
+  .rodape { margin-top: 48px; font-size: 44px; }
 }
