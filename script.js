@@ -12,10 +12,14 @@
     var hoje = Date.UTC(agora.getUTCFullYear(), agora.getUTCMonth(), agora.getUTCDate());
     var dias = Math.round((festa - hoje) / DIA);
 
-    if (dias > 1) el.textContent = "Faltam " + dias + " dias";
-    else if (dias === 1) el.textContent = "Falta 1 dia";
-    else if (dias === 0) el.textContent = "É hoje! 💗";
-    else el.textContent = "Obrigada por ter vindo! 💗";
+    var texto;
+    if (dias > 1) texto = "Faltam " + dias + " dias";
+    else if (dias === 1) texto = "Falta 1 dia";
+    else if (dias === 0) texto = "É hoje! 💗";
+    else texto = "Obrigada por ter vindo! 💗";
+
+    // Só escreve quando muda, pra não repetir o anúncio (aria-live) a cada minuto.
+    if (el.textContent !== texto) el.textContent = texto;
   }
 
   atualizar();

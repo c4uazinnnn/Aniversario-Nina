@@ -1,9 +1,9 @@
 :root {
   --rosa: #E07F8F;
-  --rosa-escuro: #B05A6A;
+  --rosa-escuro: #A93F52;
   --rosa-claro: #FFF0F3;
   --rosa-vivo: #D65F75;
-  --rosa-botao: #C9566B;
+  --rosa-botao: #B0465A;
   --borda: #F6CDD5;
   --sombra: 0 8px 24px rgba(214, 95, 117, 0.12);
   --texto: #222;
@@ -218,7 +218,10 @@ body::before {
   color: #fff;
 }
 
-.botao-cheio:hover { opacity: 0.88; }
+.botao-cheio:hover {
+  background: #9E3B4E;
+  border-color: #9E3B4E;
+}
 
 .botao-contorno {
   background: #fff;
