@@ -141,7 +141,7 @@ body::before {
   top: auto;
   left: auto;
   right: 14px;
-  bottom: 58px;
+  bottom: 74px;
   z-index: 1;
   max-width: calc(100% - 28px);
   margin: 0;
@@ -162,7 +162,7 @@ body::before {
 @media (max-width: 639px) {
   .botao.botao-som {
     right: 10px;
-    bottom: 50px;
+    bottom: 64px;
   }
 }
 
