@@ -56,13 +56,6 @@
     if (!botao.hidden) botao.hidden = true;
   }
 
-  botao.addEventListener("click", function () {
-    video.muted = false;
-    try { video.currentTime = 0; } catch (e) {}
-    tentarTocar();
-    esconderBotao();
-  });
-
   // Se tirarem o mudo pelos controles do vídeo, o botão também some.
   video.addEventListener("volumechange", function () {
     if (!video.muted) esconderBotao();
