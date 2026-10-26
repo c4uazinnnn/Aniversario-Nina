@@ -242,7 +242,7 @@ body::before {
   align-items: center;
   gap: 8px;
   max-width: 100%;
-  margin: 0 0 30px;
+  margin: 20px 0 0;
   padding: 10px 22px;
   border-radius: 999px;
   background: var(--rosa-botao);
@@ -417,30 +417,30 @@ body::before {
 
 .ou-pix {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* QR sempre com fundo branco atrás, pra câmera ler bem */
 .qr {
   display: block;
-  width: 110px;
+  width: 150px;
   height: auto;
   margin: 12px auto;
-  padding: 6px;
+  padding: 8px;
   border: 1px solid var(--borda);
   border-radius: 14px;
   background: #fff;
 }
 
 .chave {
-  font-size: 13px;
-  color: #777;
+  font-size: 14px;
+  color: #666;
   word-break: break-word;
 }
 
 #copiar-pix {
-  padding: 6px 14px;
-  font-size: 13px;
+  padding: 8px 18px;
+  font-size: 14px;
 }
 
 /* 8) Rodapé */
@@ -496,7 +496,7 @@ body::before {
   .frase { margin-bottom: 0; }
 
   .traje-destaque {
-    margin-top: 22px;
+    margin-top: 28px;
     font-size: 20px;
   }
 
