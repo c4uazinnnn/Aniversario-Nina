@@ -119,6 +119,7 @@ body::before {
 
 /* 4) Vídeo */
 .moldura-video {
+  position: relative;
   padding: 6px;
   border-radius: 24px;
   background: #fff;
@@ -133,6 +134,23 @@ body::before {
   background: #000;
   object-fit: cover;
 }
+
+/* Botão para tirar o mudo: fica no centro do vídeo, longe dos controles */
+.botao-som {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  max-width: calc(100% - 28px);
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 15px;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.botao-som[hidden] { display: none; }
 
 /* 5–7) Blocos em cartões */
 .enfeite {

@@ -26,6 +26,49 @@
   setInterval(atualizar, 60 * 1000);
 })();
 
+// Vídeo: autoplay sem som e botão "Toque para ouvir"
+(function () {
+  var video = document.querySelector(".video");
+  var botao = document.getElementById("ativar-som");
+  if (!video) return;
+
+  var semMovimento = window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+
+  function tentarTocar() {
+    try {
+      var p = video.play();
+      if (p && typeof p.catch === "function") p.catch(function () {});
+    } catch (e) {}
+  }
+
+  if (semMovimento) {
+    video.autoplay = false;
+    video.pause();
+  } else {
+    tentarTocar();
+  }
+
+  if (!botao) return;
+
+  function esconderBotao() {
+    if (!botao.hidden) botao.hidden = true;
+  }
+
+  botao.addEventListener("click", function () {
+    video.muted = false;
+    try { video.currentTime = 0; } catch (e) {}
+    tentarTocar();
+    esconderBotao();
+  });
+
+  // Se tirarem o mudo pelos controles do vídeo, o botão também some.
+  video.addEventListener("volumechange", function () {
+    if (!video.muted) esconderBotao();
+  });
+})();
+
 // Botão "Copiar chave Pix"
 (function () {
   var botao = document.getElementById("copiar-pix");
