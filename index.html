@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=Lato:wght@400;700&display=swap">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <main class="convite">
@@ -54,13 +54,24 @@
         <h2>Quando</h2>
         <p class="destaque">Sexta, 11 de dezembro de 2026</p>
         <p>a partir das 21h (horário de Brasília)</p>
-        <p class="contagem" id="contagem" aria-live="polite"></p>
+        <p class="traje">Traje: social <svg class="icone-traje" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3 8 6l2 2h4l2-2-1-3H9zm1 5-4 13h12L14 8h-4z"/></svg></p>
+        <div class="contagem" id="contagem">Sexta, 11/12 às 21h</div>
       </section>
 
       <section class="bloco">
         <h2>Onde</h2>
         <p>Rua Aurélia, 281 – Vila Romana (Lapa), São Paulo - SP</p>
         <a class="botao botao-cheio" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Aur%C3%A9lia%2C+281+-+Vila+Romana%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener">Abrir no mapa</a>
+        <div class="botoes-rota">
+          <a class="botao botao-contorno botao-extra" href="https://waze.com/ul?q=Rua%20Aur%C3%A9lia%2C%20281%20-%20Vila%20Romana%2C%20S%C3%A3o%20Paulo%20-%20SP&amp;navigate=yes" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2 4 21l8-5 8 5L12 2z"/></svg>
+            Waze
+          </a>
+          <a class="botao botao-contorno botao-extra" href="https://m.uber.com/ul/?action=setPickup&amp;pickup=my_location&amp;dropoff[formatted_address]=Rua%20Aur%C3%A9lia%2C%20281%20-%20Vila%20Romana%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h14M6 16l1.5-5h9L18 16"/><circle cx="8" cy="18" r="1.4"/><circle cx="16" cy="18" r="1.4"/></svg>
+            Uber
+          </a>
+        </div>
       </section>
 
       <section class="bloco confirmar">
@@ -89,6 +100,6 @@
     <footer class="rodape">Te espero lá! 💗 Nina</footer>
   </main>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

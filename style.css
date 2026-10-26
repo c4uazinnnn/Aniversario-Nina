@@ -210,13 +210,62 @@ body::before {
 
 .destaque { font-weight: 700; }
 
-.contagem {
-  margin-top: 14px !important;
+.traje {
+  margin-top: 8px !important;
   color: var(--rosa-escuro);
+  font-size: 16px;
+}
+
+.icone-traje {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  vertical-align: -3px;
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+.contagem {
+  margin-top: 16px !important;
+  color: var(--rosa-escuro);
+}
+
+.caixas {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.caixa {
+  flex: 0 0 auto;
+  min-width: 58px;
+  padding: 10px 6px 8px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: var(--rosa-claro);
+}
+
+.caixa strong {
+  display: block;
+  font-family: var(--serifada);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.caixa span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.contagem-texto {
+  margin: 0;
   font-family: var(--cursiva);
   font-size: 32px;
   line-height: 1.2;
-  min-height: 1.2em;
 }
 
 .botao {
@@ -269,6 +318,29 @@ body::before {
   width: 22px;
   height: 22px;
   fill: currentColor;
+}
+
+.botoes-rota {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 12px;
+}
+
+.botao-extra {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  padding: 10px 22px;
+}
+
+.botao-extra svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
 }
 
 .botao:focus-visible {
