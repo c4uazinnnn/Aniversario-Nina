@@ -210,19 +210,41 @@ body::before {
 
 .destaque { font-weight: 700; }
 
-.traje {
-  margin-top: 8px !important;
-  color: var(--rosa-escuro);
-  font-size: 16px;
+.traje-destaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 0 0 30px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--rosa-botao);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: var(--sombra);
 }
 
 .icone-traje {
-  width: 16px;
-  height: 16px;
-  margin-left: 2px;
-  vertical-align: -3px;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
-  opacity: 0.8;
+}
+
+.bloco p.traje-mini {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #FBE7EA;
+  color: var(--rosa-escuro);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .contagem {
@@ -439,6 +461,11 @@ body::before {
   .nome { font-size: 104px; }
 
   .frase { margin-bottom: 0; }
+
+  .traje-destaque {
+    margin-top: 22px;
+    font-size: 20px;
+  }
 
   .enfeite { width: 50%; margin: 48px auto 36px; }
 
