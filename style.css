@@ -135,22 +135,36 @@ body::before {
   object-fit: cover;
 }
 
-/* Botão para tirar o mudo: fica no centro do vídeo, longe dos controles */
-.botao-som {
+/* Botão para tirar o mudo: canto inferior direito, acima dos controles */
+.botao.botao-som {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: auto;
+  left: auto;
+  right: 14px;
+  bottom: 58px;
   z-index: 1;
   max-width: calc(100% - 28px);
   margin: 0;
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: rgba(176, 70, 90, 0.85);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.2;
   white-space: nowrap;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .botao-som[hidden] { display: none; }
+
+@media (max-width: 639px) {
+  .botao.botao-som {
+    right: 10px;
+    bottom: 50px;
+  }
+}
 
 /* 5–7) Blocos em cartões */
 .enfeite {
