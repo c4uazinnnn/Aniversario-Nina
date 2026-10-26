@@ -247,12 +247,11 @@ body::before {
 
 .caixa strong {
   display: block;
-  font-family: var(--serifada);
+  font-family: var(--sans);
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
-  font-variant-numeric: lining-nums tabular-nums;
-  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .caixa span {
